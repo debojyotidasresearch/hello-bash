@@ -10,12 +10,12 @@ else
     
     argc=1;
     
-    while [ $argc <= $# ];
+    for argv in $@;
     do
-        echo -e "Hello, "$argc"!";
-        argc=$((argc + 1));
+        echo "Hello, "$argv"!";
     done;
     
     unset IFS;
     stop_time=$(date +%s);
+    echo "execution time:"$((stop_time - start_time));
 fi;
